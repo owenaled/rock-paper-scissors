@@ -8,16 +8,21 @@ function getComputerChoice() {
     } else {
         choice = "Scissors"
     }
-    return choice;
+    return choice;    
 }
 
- console.log(getComputerChoice());
+function capitalize(string) {
+    string = string.toLowerCase();
+    return string.charAt(0).toUpperCase() + string.slice(1);
+};
 
-// function playRound(playerSelection, computerSelection) {
-//     // your code here!
-    
-//   }
+function playRound(playerSelection, computerSelection) {
+// your code here!
+console.log(playerSelection);
+console.log(computerSelection);
+return "Win, lose or draw"
+}
    
-//   const playerSelection = "rock";
-//   const computerSelection = getComputerChoice();
-//   console.log(playRound(playerSelection, computerSelection));
+const playerSelection = capitalize("myrock");
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
