@@ -1,5 +1,3 @@
-// computerSelection = Math.ceil(Math.random()*3);
-
 function getComputerChoice() {
     let choice = Math.ceil(Math.random()*3);
 
