@@ -1,9 +1,9 @@
 function getComputerChoice() {
-    let choice = Math.ceil(Math.random()*3);
+    let choice = Math.floor(Math.random()*3);
 
-    if (choice == 1) {
+    if (choice == 0) {
         choice = "Rock"
-    } else if (choice === 2) {
+    } else if (choice === 1) {
         choice = "Paper"
     } else {
         choice = "Scissors"
@@ -16,13 +16,43 @@ function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
+askplayer = window.prompt('Rock, Paper or Scissors');
+
+
 function playRound(playerSelection, computerSelection) {
-// your code here!
-console.log(playerSelection);
-console.log(computerSelection);
-return "Win, lose or draw"
+
+    if(playerSelection == computerSelection){
+        // console.log("It's a draw");
+        return 'It\'s a draw';
+    }
+    else if(playerSelection == 'Rock'){
+        if(computerSelection == 'Paper'){
+            return 'Computer Won';
+        }else{
+            return 'Player Won';
+        }
+    }
+    else if(playerSelection == 'Paper'){
+        if(computerSelection == 'Scissors'){
+            return 'Computer Won';
+        }else{
+            return 'Player Won';
+        }
+    }
+    else if(playerSelection == 'Scissors'){
+        if(computerSelection == 'Rock'){
+            return 'Computer Won';
+        }else{
+            return 'Player Won';
+        }
+    }
+    
 }
    
-const playerSelection = capitalize("myrock");
+const playerSelection = capitalize(askplayer);
 const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+let result = playRound(playerSelection, computerSelection);
+
+console.log(`Player: ${playerSelection}`);
+console.log(`Computer: ${computerSelection}`);
+console.log(result);
